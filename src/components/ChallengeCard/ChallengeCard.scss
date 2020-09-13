@@ -1,0 +1,130 @@
+@import "styles/_variables.scss";
+
+.challenge-card {
+  text-decoration: none;
+
+  &.challenge-card__solved {
+    // box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    &:not(.challenge-card__selected) > .card::before {
+      border-color: $green-500;
+      opacity: 0.8;
+    }
+
+    .challenge-card__title,
+    .challenge-card__points,
+    .challenge-card__points + .challenge-card__points-label {
+      color: $green-700; // light
+    }
+  }
+
+  > .card {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    &::before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0.5rem;
+      z-index: 1;
+      border: 3px solid $primary-500;
+      opacity: 0;
+      transition: 0.2s ease;
+    }
+  }
+
+  .challenge-card__header {
+    display: flex;
+    flex-direction: row;
+
+    .challenge-card__header__item--main {
+      flex: 1;
+
+      + .challenge-card__header__item {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &.challenge-card__selected {
+    > .card::before {
+      opacity: 0.5;
+    }
+  }
+
+  .challenge-card__title {
+    color: $gray-900;
+    display: flex;
+    white-space: nowrap;
+
+    svg {
+      margin-right: 8px;
+      height: 1.1em;
+      width: 1.1em;
+      vertical-align: middle;
+    }
+
+    .challenge-card__name {
+      font-size: 1rem;
+      line-height: 1.34;
+      white-space: normal;
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  .challenge-card__points {
+    font-size: 1.2rem;
+    color: $gray-700;
+    font-weight: 600;
+    display: block;
+
+    + .challenge-card__points-label {
+      font-size: 0.65rem;
+      color: $gray-700;
+      font-weight: 500;
+      text-align: right;
+      display: block;
+    }
+  }
+
+  .challenge-card__labels {
+    margin-top: 0.5rem;
+    display: flex;
+
+    > * + * {
+      margin-left: 16px;
+    }
+  }
+
+  .challenge-card__description {
+    font-size: .88rem;
+    line-height: 1.4;
+    color: $gray-600;
+    margin: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  // .challenge-card__section {
+  //   padding-left: 1.7rem;
+  //   padding-right: 1.7rem;
+  //
+  //   margin-top: 1rem;
+  //
+  //   &:first-child {
+  //     padding-top: 1.5rem;
+  //     margin-top: 0;
+  //   }
+  // }
+}

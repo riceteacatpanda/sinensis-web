@@ -1,0 +1,48 @@
+&.button--style-small {
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: $sans-serif;
+  font-weight: 500;
+  background: transparent;
+
+  &.button--color-primary {
+    color: $primary-500;
+    &:hover {
+      // background: rgba($primary-500, 0.05);
+      color: $primary-600;
+    }
+  }
+
+  &.button--color-red {
+    color: #E53E3E;
+    &:hover {
+      // background: rgba(#E53E3E, 0.05);
+      color: #C53030;
+    }
+  }
+
+  &.button--color-green {
+    color: #48BB78;
+    &:hover {
+      // background: rgba(#48BB78, 0.05);
+      color: #38A169;
+    }
+  }
+
+  padding: 6px 16px;
+
+  &:disabled {
+    color: $gray-500;
+
+    &:hover {
+      color: $gray-500;
+    }
+  }
+
+  svg {
+    fill: currentColor;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 6px;
+  }
+}

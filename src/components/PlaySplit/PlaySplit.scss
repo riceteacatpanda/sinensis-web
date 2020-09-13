@@ -1,0 +1,29 @@
+@import "styles/_variables.scss";
+
+.play-split {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .play-screen {
+    flex: 1;
+  }
+
+  .play-sidebar {
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  @media (max-width: $collapse-width) {
+    position: relative;
+    .play-sidebar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}

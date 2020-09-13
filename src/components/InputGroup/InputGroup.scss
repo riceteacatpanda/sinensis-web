@@ -1,0 +1,12 @@
+@import "styles/_variables.scss";
+
+.input-group {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    font-size: 0.7rem;
+    color: $gray-600;
+    margin-bottom: 6px;
+  }
+}

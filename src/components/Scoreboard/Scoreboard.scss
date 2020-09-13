@@ -1,0 +1,116 @@
+@import "styles/_variables.scss";
+
+.scoreboard {
+  margin: 1rem 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  .scoreboard__scores {
+    flex: 1;
+  }
+}
+
+.scoreboard__active {
+  display: block;
+  position: relative;
+  will-change: transform;
+
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 8px;
+    background: $primary-300;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.05;
+  }
+}
+
+.scoreboard__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid $gray-200;
+  box-sizing: border-box;
+
+  font-size: 0.85rem;
+
+  .scoreboard__cell {
+    z-index: 1;
+    padding: 1rem 0.5rem;
+
+    &.scoreboard__rank {
+      width: 2.6rem;
+      text-align: right;
+      flex: 0 0 auto;
+    }
+
+    &.scoreboard__name {
+      flex: 1;
+    }
+
+    &.scoreboard__points {
+      text-align: right;
+    }
+
+    &:first-child {
+      padding-left: 1rem;
+    }
+
+    &:last-child {
+      padding-right: 1rem;
+    }
+  }
+
+  &.scoreboard__entry {
+    color: $gray-700;
+    font-weight: 400;
+
+    height: 100%;
+
+    .scoreboard__name {
+      color: $gray-800;
+      font-weight: 500;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .scoreboard__trophy {
+        > svg {
+          height: 1.5em;
+          margin-right: 8px;
+        }
+
+        > span, > svg {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .scoreboard__rank {
+      font-family: $monospace;
+      color: $gray-500;
+    }
+  }
+
+  &.scoreboard__header {
+    color: $gray-500;
+    font-weight: 500;
+    border-width: 2px;
+  }
+}

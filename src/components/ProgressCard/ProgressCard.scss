@@ -1,0 +1,79 @@
+@import "styles/_variables.scss";
+
+.card.progress__card {
+  background-image: linear-gradient(346deg, #132c81, #2f449f, #485dbe, #5f77de)
+}
+
+.progress {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .progress__points {
+    font-size: 2rem;
+    padding: 1.5rem 0 0 1.7rem;
+
+    .progress__points-value {
+      color: #FFF;
+      font-weight: 700;
+    }
+
+    .progress__points-label {
+      flex: 1;
+      color: rgba(#FFF, 0.7);
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+  }
+
+  .progress__primary {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .progress__graph {
+      flex: 1;
+      padding: 0.5rem 2rem 0 0;
+    }
+  }
+
+  .progress__stats {
+    flex: 0 0 auto;
+    padding: 1.5rem 1.7rem 1.5rem 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+
+    .progress-stat {
+      .progress-stat__value {
+        color: #FFF;
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+      .progress-stat__stat {
+        color: rgba(#FFF, 0.6);
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    .progress__stats {
+      padding: 1.5rem 1.7rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      .progress-stat {
+        .progress-stat__value {
+          font-size: 1.2rem;
+        }
+        .progress-stat__stat {
+          // font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

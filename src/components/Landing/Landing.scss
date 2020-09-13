@@ -1,0 +1,42 @@
+@import "styles/_variables.scss";
+
+.landing {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .landing__name {
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin-top: 20%;
+  }
+
+  .landing__duotone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: none;
+
+    .landing__panda {
+      object-fit: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%) contrast(2);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: blue;
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+  }
+}

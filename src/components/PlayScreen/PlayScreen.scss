@@ -1,0 +1,37 @@
+@import "styles/_variables.scss";
+
+.play-screen {
+  padding: 3rem 4rem 1rem 4rem;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: $collapse-width) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .play-screen__header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+
+    .play-screen__header__titles {
+      flex: 1;
+    }
+
+    .play-screen__header__time {
+      @media (max-width: $collapse-width) {
+        display: none;
+      }
+      margin-left: 16px;
+    }
+  }
+
+  .play-screen__title {
+    color: $gray-900;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+}

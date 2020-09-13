@@ -1,0 +1,61 @@
+@import "styles/_variables.scss";
+
+.score-graph {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .score-graph__tooltip {
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: #FFF;
+
+    @supports (backdrop-filter: blur(16px)) {
+      backdrop-filter: blur(4px) saturate(200%);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    transform: translate(-50%, -100%);
+    margin-top: -10px;
+
+    white-space: nowrap;
+
+    .score-graph__tooltip__value {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1F1F1F;
+    }
+
+    .score-graph__tooltip__label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #2D3748;
+    }
+  }
+}
+
+//
+// .graph__wrapper {
+//   position: relative;
+// }
+//
+// .graph__stroke {
+//   stroke: $gray-300;
+// }
+//
+// .graph__label {
+//   fill: $gray-700;
+//   font-family: $sans-serif;
+// }
+//
+// .graph__tick text {
+//   fill: $gray-500;
+//   font-family: $sans-serif;
+//   font-weight: 600;
+// }

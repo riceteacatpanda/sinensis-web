@@ -1,0 +1,23 @@
+@import-normalize;
+@import "styles/_variables.scss";
+@import "styles/theme-dark.scss";
+@import "styles/theme-light.scss";
+@import "styles/theme-jubie.scss";
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: $sans-serif;
+}
+
+html, body, #root, #root > div {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,65 @@
+@import "styles/_variables.scss";
+
+&.button--style-default {
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: $sans-serif;
+  font-weight: 500;
+
+  &.button--color-primary {
+    background: $primary-500;
+    &:hover {
+      background: $primary-600;
+    }
+  }
+
+  &.button--color-plain {
+    background: $gray-000;
+    color: $gray-600;
+    &:hover {
+      background: $gray-100;
+    }
+  }
+
+  &.button--color-green {
+    background: #48BB78;
+    &:hover {
+      background: #38A169;
+    }
+  }
+
+  &.button--color-red {
+    background: #E53E3E;
+    &:hover {
+      background: #C53030;
+    }
+  }
+
+  color: #FFF;
+  padding: 0.5rem 1.5rem;
+
+  .button__loader svg {
+    fill: $primary-800;
+  }
+
+  &:disabled {
+    background: $gray-400;
+
+    &:hover {
+      background: $gray-400;
+    }
+  }
+
+  &:active {
+    transform: scale3d(0.96, 0.96, 0.96);
+  }
+
+  svg {
+    fill: currentColor;
+    height: 0.9rem;
+    width: 0.9rem;
+    margin-right: 8px;
+  }
+
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}

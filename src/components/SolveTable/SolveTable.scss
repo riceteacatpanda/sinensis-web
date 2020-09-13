@@ -1,0 +1,55 @@
+@import "styles/_variables.scss";
+
+.solve-entry {
+  height: 2.5rem;
+
+  display: flex;
+  align-items: center;
+
+  // + .solve-entry {
+  //   border-top: 1px solid $gray-200;
+  // }
+
+  &.solve-entry--even {
+    background: $gray-100;
+  }
+
+  > span {
+    svg {
+      height: 1rem;
+      margin-right: 4px;
+    }
+
+    > * {
+      vertical-align: middle;
+    }
+  }
+
+  .solve-entry__rank {
+    width: 2rem;
+    font-size: 0.8rem;
+    text-align: right;
+    color: $gray-500;
+    position: relative;
+    padding: 0 16px;
+  }
+
+  .solve-entry__name {
+    flex: 1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $gray-800;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+
+  .solve-entry__time {
+    flex: 0 0 auto;
+    text-align: right;
+    margin-left: 16px;
+    font-size: 0.7rem;
+    color: $gray-500;
+    padding: 0 16px;
+    width: 5rem;
+  }
+}

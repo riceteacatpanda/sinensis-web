@@ -1,0 +1,25 @@
+@import "styles/_variables.scss";
+
+.countdown {
+  &.countdown--small {
+    font-size: 0.8rem;
+  }
+
+  font-size: 1.2rem;
+  text-align: right;
+  .countdown__time {
+    font-weight: 500;
+    color: $gray-800;
+  }
+
+  .countdown__label {
+    color: $gray-700;
+    font-weight: 400;
+  }
+
+  .countdown__abs {
+    font-size: 0.7rem;
+    margin-top: 4px;
+    color: $gray-600;
+  }
+}

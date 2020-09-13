@@ -1,0 +1,36 @@
+@import "styles/_variables.scss";
+
+.auth-split {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+
+  background: $gray-000;
+
+  > * {
+    flex: 1;
+  }
+
+  .auth-split__aside {
+    background: url("./sidebar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  .auth-split__content {
+    padding: 6rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    > * {
+      flex: 0 1 450px;
+    }
+  }
+}

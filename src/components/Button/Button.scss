@@ -1,0 +1,72 @@
+@import "styles/_variables.scss";
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 2rem 0;
+
+  .button {
+    margin: 0 1rem 0.5rem 0;
+  }
+}
+
+
+.button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  white-space: nowrap;
+  vertical-align: middle;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin: 0;
+  outline: none;
+  border: none;
+  position: relative;
+
+  &.button--loading {
+    > svg, > span {
+      visibility: hidden;
+    }
+
+    .button__loader {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      svg {
+        margin: 0;
+        height: 70%;
+      }
+    }
+  }
+
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  will-change: transform;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary-500, .5);
+  }
+
+  .button__count {
+    margin-left: 6px;
+    margin-right: -2px;
+    font-size: 0.6rem;
+    color: $gray-500;
+  }
+
+  @import "style-plain.scss";
+  @import "style-small.scss";
+  @import "style-toggle.scss";
+  @import "style-default.scss";
+}

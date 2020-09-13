@@ -1,0 +1,24 @@
+@import "styles/_variables.scss";
+
+.annotated-label {
+  font-size: 0.8rem;
+
+  .annotated-label__image {
+    vertical-align: middle;
+    svg {
+      height: 1em;
+      width: 1em;
+      fill: currentColor;
+    }
+
+    + .annotated-label__name {
+      margin-left: 8px;
+    }
+  }
+
+  .annotated-label__name {
+    vertical-align: middle;
+    color: currentColor;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,119 @@
+@import "styles/_variables.scss";
+
+.challenge-sidebar {
+  padding: 0 0.5rem;
+
+  .challenge-sidebar__admin-panel {
+    margin-top: 1rem;
+    margin-left: -16px;
+
+    display: flex;
+    // justify-content: flex-end;
+    flex-wrap: wrap;
+
+    + .challenge-sidebar__details {
+      margin-top: 1rem;
+    }
+  }
+
+  .challenge-sidebar__details__pair {
+    display: flex;
+    flex-direction: row;
+
+    .challenge-sidebar__details__pair__primary {
+      flex: 1;
+    }
+
+    .challenge-sidebar__details__pair__aside {
+      margin-left: 4px;
+    }
+  }
+
+  .challenge-sidebar__points {
+    color: $gray-700;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .challenge-sidebar__points-label {
+    color: $gray-700;
+    font-size: 0.6rem;
+    text-align: right;
+  }
+
+  .challenge-sidebar__detail {
+    color: $gray-500;
+    font-size: 0.8rem;
+    line-height: 1.67;
+    margin: 1rem 0;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .challenge-sidebar__name {
+    color: $gray-800;
+    margin: 1rem 0;
+    margin-top: 0;
+    font-weight: 600;
+  }
+
+  .challenge-sidebar__description {
+    color: $gray-700;
+    font-size: 0.9rem;
+    line-height: 1.67;
+    margin: 1rem 0;
+  }
+
+  .challenge-sidebar__details {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.cs-data-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin: 1.5rem 0;
+}
+
+.cs-data-grid__item {
+  display: flex;
+  flex-direction: row;
+
+  .cs-data-grid__icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: $gray-500;
+      margin-right: 12px;
+    }
+  }
+
+  .cs-data-grid__content {
+    flex: 1;
+  }
+
+  .cs-data-grid__name {
+    font-size: 0.5rem;
+    color: $gray-500;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .cs-data-grid__value {
+    font-size: 0.8rem;
+    color: $gray-600;
+  }
+}

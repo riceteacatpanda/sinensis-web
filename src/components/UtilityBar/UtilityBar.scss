@@ -1,0 +1,65 @@
+@import "styles/_variables.scss";
+
+.utility-bar {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  + .utility-bar {
+    margin-top: -1rem;
+  }
+
+  .utility-item {
+    margin-bottom: 1rem;
+
+    flex: 2 1 400px;
+    &.utility-item--aside {
+      flex: 1 1 300px;
+    }
+
+    &.utility-item--small {
+      flex: 0 1 auto;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    .utility-item__title {
+      font-size: 0.8rem;
+      color: $gray-700;
+      margin-bottom: 8px;
+      span, svg {
+        vertical-align: middle;
+      }
+      svg {
+        fill: $gray-500;
+        height: 0.8rem;
+      }
+    }
+
+    .utility-item__contents {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > .button {
+        height: 100%;
+        margin-right: 12px;
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .utility-item {
+      flex: auto;
+      width: 100%;
+    }
+  }
+}

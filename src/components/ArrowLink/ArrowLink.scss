@@ -1,0 +1,15 @@
+@import "styles/_variables.scss";
+
+.arrow-link {
+  color: $primary-500;
+  font-weight: 500;
+
+  font-size: 1.1em;
+  vertical-align: middle;
+  text-decoration: none;
+  line-height: 1.6em;
+
+  &::after {
+    content: " →";
+  }
+}

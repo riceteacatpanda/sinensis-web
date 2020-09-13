@@ -1,0 +1,15 @@
+@import "styles/_variables.scss";
+
+.solve-list__scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 16px 8px;
+}
+
+.solve-list {
+  display: flex;
+}
+
+.solve {
+  margin-right: 2rem;
+}

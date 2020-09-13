@@ -1,0 +1,81 @@
+@import "styles/_variables.scss";
+@import "styles/_shake.scss";
+
+$border-input-transition: 0.15s ease;
+
+@mixin border-input-state($name, $color) {
+  .border-input--#{$name} {
+    .border-input__input {
+      border-color: $color;
+    }
+
+    &.border-input--icon .border-input__icon {
+      svg {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@include border-input-state("valid", #48BB78);
+@include border-input-state("invalid", #F56565);
+@include border-input-state("focus", $primary-500);
+
+.border-input--icon {
+  .border-input__input {
+    padding-left: 2.5rem;
+  }
+
+  position: relative;
+  .border-input__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    margin: 3px;
+
+    svg {
+      padding: 0.6rem;
+      height: 1.2rem;
+      width: 1.2rem;
+
+      transition: fill $border-input-transition;
+      fill: $gray-300;
+    }
+  }
+}
+
+.border-input__input {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  background: none;
+
+  box-shadow: none;
+
+  transition: border-color $border-input-transition;
+
+  background: $gray-000;
+  border: 3px solid $gray-300;
+  border-radius: 0.5rem;
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  color: $gray-800;
+  font-family: $monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  &.border-input--disabled {
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: $gray-600;
+  }
+}

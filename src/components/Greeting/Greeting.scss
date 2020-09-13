@@ -1,0 +1,14 @@
+@import "styles/_variables.scss";
+
+.greeting {
+  font-size: 2rem;
+
+  .greeting__name {
+    font-weight: 400;
+  }
+
+  .greeting__label {
+    color: $gray-700;
+    font-weight: 400;
+  }
+}

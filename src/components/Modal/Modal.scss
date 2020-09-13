@@ -1,0 +1,104 @@
+@import "styles/_variables.scss";
+
+.modal {
+  background: $gray-000;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  border-radius: 1rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  &:focus {
+    outline: none;
+  }
+
+  $modal-padding: 2rem;
+  padding: $modal-padding 3rem;
+
+  width: 600px;
+  box-sizing: border-box;
+  max-width: 95%;
+
+  .modal__close {
+    position: absolute;
+    top: $modal-padding;
+    right: $modal-padding;
+
+    height: 1.5rem;
+    width: 1.5rem;
+
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    svg {
+      width: inherit;
+      height: inherit;
+      fill: $gray-500;
+
+      transition: fill 0.2s ease;
+    }
+
+    &:hover svg {
+      fill: $gray-700;
+    }
+  }
+
+  .modal__content {
+    h1 {
+      margin-top: 0;
+      font-family: $sans-serif;
+      color: $gray-800;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem;
+      font-family: $sans-serif;
+      color: $gray-600;
+      line-height: 1.67;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.modal__overlay {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(255, 255, 255, 0.8);
+  @supports (backdrop-filter: blur(16px)) {
+    backdrop-filter: blur(32px) saturate(400%);
+    background: none;
+  }
+
+  opacity: 0;
+  will-change: opacity;
+  transition: all 0.2s ease;
+}
+
+.modal__overlay--open {
+  opacity: 1;
+}
+
+.modal__overlay--close {
+  opacity: 0;
+}

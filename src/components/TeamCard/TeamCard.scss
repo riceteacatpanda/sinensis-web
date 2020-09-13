@@ -1,0 +1,20 @@
+@import "styles/_variables.scss";
+
+.members {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .member {
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+
+    color: $gray-800;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    + .member {
+      border-top: 1px solid $gray-200;
+    }
+  }
+}

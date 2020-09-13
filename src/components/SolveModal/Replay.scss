@@ -1,0 +1,57 @@
+.replay-confetti {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+  text-decoration: none;
+
+  font-family: $sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $gray-600;
+
+  svg {
+    height: 1em;
+    fill: currentColor;
+  }
+
+  svg, span {
+    vertical-align: middle;
+  }
+
+  padding: 0 0.5rem;
+
+  transition: all 0.2s ease;
+
+  z-index: 1;
+
+  &:not(:disabled):hover {
+    color: $gray-700;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  position: relative;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    top: -4px;
+    bottom: -4px;
+    border-radius: 4px;
+    background: rgba($gray-200, 0.75);
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  &:disabled {
+    color: $gray-400;
+    cursor: not-allowed;
+  }
+}

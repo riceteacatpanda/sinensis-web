@@ -1,0 +1,87 @@
+@import "styles/_variables.scss";
+
+.notifications {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 1rem;
+  right: 1rem;
+  pointer-events: none;
+}
+
+@mixin theme($name, $color, $text-color) {
+  .notification--theme-#{$name} {
+    background: $color;
+
+    @supports (backdrop-filter: blur(16px)) {
+      backdrop-filter: blur(8px) saturate(400%) brightness(200%);
+      background: rgba($color, 0.8);
+    }
+
+    .notification__content {
+      color: $text-color;
+    }
+  }
+}
+
+@include theme("default", #FEEBC8, #744210);
+@include theme("announcement", #FFF, #1A202C);
+@include theme("error", #FEB2B2, #742A2A);
+
+.notification {
+  pointer-events: all;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  display: flex;
+
+  .notification__icon {
+    height: 1.5rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    line-height: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .notification__content {
+    flex: 1;
+    p {
+      margin: 4px 0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+  }
+
+  .notification__config {
+    margin-left: 1rem;
+    height: 1.5rem;
+    button {
+      outline: none;
+      background: none;
+      box-shadow: none;
+      border: none;
+      display: block;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+
+      color: rgba(0, 0, 0, 0.4);
+      transition: color 0.2s ease;
+      &:hover {
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      svg {
+        fill: currentColor;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+}

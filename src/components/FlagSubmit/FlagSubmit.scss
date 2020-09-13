@@ -1,0 +1,105 @@
+@import "styles/_variables.scss";
+@import "styles/_shake.scss";
+
+$flag-submit-transition: 0.15s ease;
+
+@mixin flag-submit-state($name, $color, $hoverColor: $color) {
+  &.flag-submit--#{$name} {
+    border-color: $color;
+    border-radius: 0.5rem;
+
+    button {
+      color: $color;
+
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+  }
+}
+
+.flag-submit {
+  // background: $gray-200;
+  // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+
+  background: $gray-000;
+  border: 3px solid $gray-300;
+
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+
+  transition: border-color $flag-submit-transition;
+
+  @include flag-submit-state("focused", $primary-500, $primary-600);
+  @include flag-submit-state("correct", #48BB78);
+  @include flag-submit-state("incorrect", #F56565);
+
+  &.flag-submit--disabled {
+    input, button {
+      cursor: wait;
+    }
+  }
+
+  &.flag-submit--shake {
+    @include do-shake('shake-hard', 12, 12, 5);
+  }
+
+  input {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    padding-right: 2.5rem;
+    border: none;
+    outline: none;
+    background: none;
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    color: $gray-800;
+    font-family: $monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &::placeholder {
+      color: $gray-600;
+    }
+  }
+
+  position: relative;
+
+  button {
+    cursor: pointer;
+
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+
+    padding: 0.5rem;
+    padding-right: 0.3rem;
+    box-sizing: border-box;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    color: $gray-500;
+    transition: color $flag-submit-transition;
+
+    &:hover {
+      color: $gray-600;
+    }
+
+    svg {
+      width: 2.5rem;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+}

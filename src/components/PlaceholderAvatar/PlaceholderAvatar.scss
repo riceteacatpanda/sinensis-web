@@ -1,0 +1,16 @@
+@import "styles/_variables.scss";
+
+.placeholder-avatar {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 3px;
+
+  user-select: none;
+
+  line-height: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+
+  margin-right: 16px;
+}

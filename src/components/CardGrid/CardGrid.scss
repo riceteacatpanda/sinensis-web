@@ -1,0 +1,7 @@
+@import "styles/_variables.scss";
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-gap: 2rem;
+}

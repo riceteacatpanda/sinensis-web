@@ -1,0 +1,21 @@
+@import "styles/_variables.scss";
+
+.solve-modal__image {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+
+  height: 15rem;
+  width: 15rem;
+}
+
+.solve-modal__replay {
+  margin: 1rem;
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@import "./Replay.scss";
