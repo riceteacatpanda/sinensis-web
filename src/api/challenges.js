@@ -1,5 +1,3 @@
-import { sleep } from '../utils/promise';
-
 export async function getChallenges(api) {
     const response = await api({ url: '/challenges' });
     return response.data;

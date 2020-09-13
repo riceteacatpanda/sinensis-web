@@ -1,4 +1,3 @@
-import { sleep } from '../utils/promise';
 import { formData } from '../utils/form';
 
 export async function login(api, { email, password }) {
