@@ -4,8 +4,8 @@
   An open source, modern, scalable CTF platform.
 </p>
 <p align="center">
-    <a href="https://riceteacatpanda.wtf/">RiceTeaCatPanda</a> &mdash;
-    <a href="https://riceteacatpanda.wtf/code-of-conduct/">Code Of Conduct</a> &mdash;
+    <a href="https://riceteacatpanda.org/">RiceTeaCatPanda</a> &mdash;
+    <a href="https://riceteacatpanda.org/code-of-conduct/">Code Of Conduct</a> &mdash;
     <a href="https://github.com/riceteacatpanda/sinensis-web/blob/master/LICENSE/">License (MPL 2.0)</a>
 </p>
 
